@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+     * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins',sans-serif;
+ }
+ 
+ 
+ a {
+   text-decoration: none;
+ }
+ 
+ li {
+   list-style: none;
+ }
+ .navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 8px;
+   background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+   color: #fff;
+ }
+ 
+ .nav-links a {
+   color: #fff;
+ }
+ 
+ 
+ .logo a{
+   font-size: 32px;
+   color:white;
+   margin-left: 8px;
+ }
+ #logout{
+    font-size: 20px;
+    color: white;
+    margin-right: 80px;
+  }
+  ul {
+  list-style-type: none;
+  
+  padding: 0;
+  width:220px;
+  height:587px;
+  background-color: #2aaca6bd;
+  border:1px solid #1D7874;
+  font-size: 18px;
+  
+}
+
+li a {
+  display: block;
+  color:white;
+  padding: 10px 16px;
+  text-decoration: none;
+ 
+  border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+  background-color:#1D7874;
+  color: white;
+}
+.box{
+    
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.list{
+  width: 83%; 
+
+}
+table{
+  margin-left: 120px;
+  margin-top: 30px;
+  width:80%;
+  border-collapse: collapse;
+}
+
+td{
+  text-align: center;
+  padding: 20px;
+  
+}
+.list .fa,.fas{
+  background-color: #1D7874;
+    border-radius: 10px;
+    color:white;
+    font-size: 30px;
+    border: 20px solid #1D7874;
+}
+
+
+</style>  
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+       
+      </nav>
+      <div class="box">
+        <div class="box1">
+        <ul>
+          <li><a href="/admin/dashboard">Dashboard</a></li>
+          <li><a href="/admin/dashboard/doctors">Doctor</a></li>
+          <li><a href="/list">Doctor Details</a></li>
+          <li><a href="/dreg">Add Doctor</a></li>
+          
+        </ul>
+        </div>
+        <div class="list">
+            
+          <table >
+            <caption style="color:#1D7874;font-size: 40px;margin-bottom: 60px;">WELCOME ADMIN</caption>
+             <tr>
+              <td>
+                <a href="/list" ><i class="fas fa-list"></i><br>
+                  <p style="font-size: 25px;color:#000;">Doctor details</p>
+                  <text style="font-size: 17px;color:#1D7874">View Details</text></a>
+              </td>
+              <td>
+                <a href="/dreg" ><i class="fa fa-user-circle"></i><br>
+                  <p style="font-size: 25px;color:#000;">Add</p>
+                  <text style="font-size: 17px;color:#1D7874">Add New Doctor</text></a>
+              </td>
+            
+              
+              
+             </tr>
+             </table>
+             
+        </div>
+        </div>
+     
+</body>
+</html>

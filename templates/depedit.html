@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Departments</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+   * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins',sans-serif;
+}
+
+
+a {
+ text-decoration: none;
+}
+
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 8px;
+ background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+ color: #fff;
+}
+
+.nav-links a {
+ color: #fff;
+}
+
+
+.logo a{
+ font-size: 32px;
+ color:white;
+ margin-left: 8px;
+}
+#logout{
+  font-size: 20px;
+  color: white;
+  margin-right: 80px;
+}
+ul {
+list-style-type: none;
+
+padding: 0;
+width:220px;
+height:555px;
+background-color: #2aaca6bd;
+border:1px solid #1D7874;
+font-size: 18px;
+
+}
+
+li a {
+display: block;
+color:white;
+padding: 10px 16px;
+text-decoration: none;
+
+border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+background-color:#1D7874;
+color: white;
+}
+.box{
+  
+  display:flex;
+  flex-wrap:wrap;
+}
+.box2{
+    width:83%;
+   
+    display:inline;
+}
+/* button{
+    height: 43px;
+    background-color:#2aaca5;
+    color:#fff;
+    font-size: 20px;
+    padding: 7px;
+    width: 25%;
+    margin-bottom: 5px;
+    margin-left: 200px;
+    border-radius: 10px;
+} */
+button:hover{
+    cursor: pointer;
+    background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+}
+table{
+  width: 70%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 150px;
+}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+th{
+    background-color: #1D7874;
+    color: white;
+}
+th,td{
+  text-align: center;
+  border:1px solid black;
+  padding: 2px;
+
+}
+form{
+    display: inline-block   ;
+    width: 70%;
+    margin-left: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    margin-top: 100px;
+    height:200px;
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  color:#1D7874;
+  font-size: 30px;
+  margin-top: 10px;
+}
+ .input-box input{
+  height: 40px;
+  width: 60%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+ .input-box input:focus,
+ .input-box input:valid{
+  border-color:#1D7874;
+}
+form  .button{
+   height: 40px;
+   width: 30%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+   
+   margin-left: 60px;
+ }
+ form  .button:hover{
+  
+    background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color:white;
+  }
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+        </nav>
+        <div class="box">
+        <div class="box1">
+            <ul>
+              <li><a href="/admin/dashboard">Dashboard</a></li>
+              <li><a href="/admin/dashboard/doctors">Doctors</a></li>
+              <li><a href="/admin/dashboard/patients">Patients</a></li>
+              <li><a href="/admin/dashboard/departments">Departments</a></li>    
+              <li><a href="/admin/dashboard/appointments">Appointments</a></li>
+              <li><a href="/admin/dashboard/messages">Messages</a></li>   
+              <li><a href="/admin/dashboard/adminprofile">My Profile</a></li>        
+            </ul>
+            </div>
+        <div class="box2">  
+           <form action="{{url_for('depupdate')}}" class="form" method = "POST">
+            <div class="input-box">
+                <span class="details">Edit Department</span><br>
+                <span>Department Id  : {{data[0]}}</span><br>
+                
+                <input type="text" id="dept_name" name="dept_name" value="{{data[1]}}" placeholder="Enter Department Name" required>
+                <input type="submit" value="Save Changes" class="button">
+                <input name="id" value="{{ data[0] }}" type="hidden">
+              </div>
+            </form>
+        </div>
+    </div>
+    </body>
+    </html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Patient Dashboard</title>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+       * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins',sans-serif;
+    }
+    
+    
+    a {
+     text-decoration: none;
+    }
+    
+    li {
+     list-style: none;
+    }
+    .navbar {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 8px;
+     background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+     color: #fff;
+    }
+    
+    .nav-links a {
+     color: #fff;
+    }
+    .logo a{
+     font-size: 32px;
+     color:white;
+     margin-left: 8px;
+    }
+    #logout{
+    font-size: 20px;
+    color: white;
+    margin-right: 80px;
+  }
+    .main{
+      display: flex;
+      flex-wrap: wrap;
+      width:100%;
+      
+    }
+.box1{
+    width: 17%;
+    
+}
+.box2{
+    text-align: center;
+    width:83%;
+    display: grid;
+    
+}
+ul {
+list-style-type: none;
+
+height:730px;
+background-color: #2aaca6bd;
+border:1px solid #1D7874;
+font-size: 18px;
+
+}
+
+li a {
+display: block;
+color:white;
+padding: 10px 16px;
+text-decoration: none;
+
+border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+background-color:#1D7874;
+color: white;
+}
+.container{
+  max-width: 700px;
+  height: 550px;
+  
+  width: 70%;
+  background-color: #fff;
+  padding: 15px 30px; 
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin-left: 200px;
+  margin-top: 20px;
+}
+.container .title{
+  text-align: left;
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+  text-align: left;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color:#1D7874;
+}
+select{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+ textarea{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  padding-top: 8px;
+}
+ 
+ form .button{
+   height: 45px;
+   
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+ }
+ form .button input:hover{
+  
+  background: radial-gradient(whitesmoke, #1D7874  );
+  color:black;
+  }
+   table{
+    height: 45px;
+    width: 76%;
+  
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 10px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  text-align: left;
+  }
+ 
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+       
+      </nav>
+      <div class="main">
+      <div class="box1">
+        <ul>
+          <li><a href="/patient/dashboard">Dashboard</a></li>
+          <li><a href="/patient/dashboard/newappointment">Book Appointment</a></li>
+          <li><a href="/patient/dashboard/appointmenthistory">Appointment History</a></li>
+          <li><a href="/patient/dashboard/profile">My Profile</a></li>
+        </ul>
+        </div>
+        <div class="box2">
+            
+          <div class="container">
+            <div class="title">Book Appointment
+                
+            </div>
+          <div class="content">
+            <form action="/patient/appointmentdetails" class="form" method = "POST">
+              <div class="user-details">
+                <div class="input-box">
+                  <span class="details">Patient Name</span>
+                  <input type="text" id="pname" name="pname"  placeholder="Enter Patient's name" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Phone Number</span>
+                  <input type="number" id="num" name="num"  placeholder="Your Number" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Email</span>
+                  <input type="text" id="email" name="email" value="{{username}}"  required>
+                </div>
+                <input name="id"  type="hidden">
+                <div class="input-box">
+                  <span class="details"> Department</span>
+                  <select class="form-control" id="dep" name="dep">
+                    
+                    {% for row in departments %}
+                    <option value="{{row[1]}}">{{row[1]}}</option>
+                    {% endfor %}
+                </select>
+                </div>
+                
+             
+                <div class="input-box">
+                  <span class="details"> Doctors</span>
+                  <select class="form-control" id="name" name="name" required>
+                  
+                  </select>
+                </div> 
+                <div class="input-box">
+                  <span class="details">Fees</span>
+                  <select class="form-control" id="fees" name="fees" required>
+                    </select>
+                </div>
+                <div class="input-box">
+                  <span class="details">Date</span>
+                  <input type="date" id="date" name="date" min="{{today}}" required>
+                </div>
+                <div class="input-box">
+                  <span class="details">Time</span>
+                  <input type="time" id="time" name="time" min="10:00" max="23:00" placeholder="Enter Email" required>
+                </div>
+              </div>
+              
+              <div class="button">
+                
+                <input type="submit" value="Book Now">
+              </div>
+            </form>
+          </div>
+     </div>
+</div>
+</div>
+
+<script>
+  dep_select = document.getElementById('dep');
+  name_select = document.getElementById('name');
+  fees_select = document.getElementById('fees');
+  dep_select.onchange = function(){
+    dep = dep_select.value;         
+      fetch('/patient/dashboard/docname/' + dep).then(function(response){
+        response.json().then(function(data) {
+        optionHTML = '';
+        optionHTML +='<option>Select</option>'
+        for (data of data.departmentdoc) {
+          
+          optionHTML += '<option value="' + data.id +''+ data.fname+'">' +'Dr. '+ data.fname +' '+ data.lname+'</option>'
+          
+          }
+          name_select.innerHTML = optionHTML;
+          });
+         });
+        }
+  name_select.onchange = function(){
+   fees = name_select.value; 
+   
+   fetch('/patient/dashboard/docfee/' + fees).then(function(response){
+    response.json().then(function(data) {
+     optionHTML = '';
+     for (data of data.feedoc) {
+      optionHTML += '<option>'+ data.fees + '</option>'
+     }
+     fees_select.innerHTML = optionHTML;
+    });
+   });
+  }
+           
+  </script>
+</body>
+</html>

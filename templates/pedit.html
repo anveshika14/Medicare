@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Registration Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  
+  background:linear-gradient(180deg,white,#1D7874);
+}
+.box{
+  width: 100%;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+.box1{
+  width:30%;
+
+}
+.container{
+  max-width: 700px;
+  height: 450px;
+  margin: 10px;
+  width: 70%;
+  background-color: #fff;
+  padding: 15px 30px; 
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color:#1D7874;
+}
+
+ 
+ form .button{
+   height: 45px;
+   
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+ }
+ form .button input:hover{
+  
+  background: radial-gradient(whitesmoke, #1D7874  );
+  color:black;
+  }
+  /* h3{
+        color:#071E22;
+        font-size:15px;
+        margin-left:200px;
+        font-family:Arial, Helvetica, sans-serif;
+
+    } */
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+.navbar {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 8px;
+  background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+
+.logo a{
+  font-size: 32px;
+  color:white;
+  margin-left: 8px;
+}
+
+#logout{
+    font-size: 20px;
+    color: white;
+    margin-right: 80px;
+  }
+
+ ul {
+  list-style-type: none;
+  
+  padding: 0;
+  width:220px;
+  height:650px;
+  background-color: #2aaca6bd;
+  border:1px solid #1D7874;
+  font-size: 18px;
+  
+}
+
+li a {
+  display: block;
+  color:white;
+  padding: 10px 16px;
+  text-decoration: none;
+ 
+  border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+  background-color:#1D7874;
+  color: white;
+}
+.box{
+    
+    display:flex;
+    flex-wrap:wrap;
+}
+
+.list{
+  width: 83%; 
+
+}
+     </style>
+   </head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+    <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+  </nav>
+  <div class="box">
+  <div class="box1">
+    <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/dashboard/doctors">Doctors</a></li>
+        <li><a href="/admin/dashboard/patients">Patients</a></li>
+        <li><a href="/admin/dashboard/departments">Departments</a>
+        </li>    
+        <li><a href="/admin/dashboard/appointments">Appointments</a></li>
+        <li><a href="/admin/dashboard/messages">Messages</a></li>   
+        <li><a href="/admin/dashboard/adminprofile">My Profile</a></li>      
+        
+      </ul>
+  </div>
+  <div class="container">
+    <div class="title">Edit Information</div>
+    <div class="content">
+      <form action="{{url_for('pupdate')}}" class="form" method = "POST">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="fname" name="fname" value={{data[1]}} placeholder="Enter  First name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="lname" name="lname" value={{data[2]}} placeholder="Enter  Last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Date Of Birth</span>
+            <input type="date" id="dob" name="dob" value={{data[3]}} placeholder="Enter  Date Of Birth" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" id="num" name="num" value={{data[4]}} placeholder="Enter  Number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" name="email" value={{data[5]}} placeholder="Enter Email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="text" id="password" name="password" value={{data[6]}} placeholder="Enter password" required>
+          </div>
+          
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Save Changes">
+          <input name="id" value="{{ data[0] }}" type="hidden">
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

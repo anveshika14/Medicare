@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Patient Profile</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+       * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins',sans-serif;
+    }
+    
+    
+    a {
+     text-decoration: none;
+    }
+    
+    li {
+     list-style: none;
+    }
+    .navbar {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 8px;
+     background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+     color: #fff;
+    }
+    
+    .nav-links a {
+     color: #fff;
+    }
+    
+    
+    .logo a{
+     font-size: 32px;
+     color:white;
+     margin-left: 8px;
+    }
+    #logout{
+      font-size: 20px;
+      color: white;
+      margin-right: 80px;
+    }
+    ul {
+    list-style-type: none;
+    
+    padding: 0;
+    width:225px;
+    height:555px;
+    background-color: #2aaca6bd;
+    border:1px solid #1D7874;
+    font-size: 18px;
+    
+    }
+    
+    li a {
+    display: block;
+    color:white;
+    padding: 10px 16px;
+    text-decoration: none;
+    
+    border: 1px solid rgba(128, 128, 128, 0.555);
+    }
+    
+    li :hover {
+    background-color:#1D7874;
+    color: white;
+    }
+    .box{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .container{
+  max-width: 700px;
+  height: 470px;
+  
+  width: 70%;
+  background-color: #fff;
+  padding: 15px 30px; 
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+  margin-left: 200px;
+  margin-top: 20px;
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color:#1D7874;
+}
+
+ 
+ form .button{
+   height: 45px;
+   
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+ }
+ form .button input:hover{
+  
+  background: radial-gradient(whitesmoke, #1D7874  );
+  color:black;
+  }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+        </nav>
+    <div class="box">
+    <div class="box1">
+        <ul>
+            <li><a href="/patient/dashboard">Dashboard</a></li>
+            <li><a href="/patient/dashboard/newappointment">Book Appointment</a></li>
+            <li><a href="/patient/dashboard/appointmenthistory">Appointment History</a></li>
+            <li><a href="/patient/dashboard/profile">My Profile</a></li>   
+        </ul>
+        </div>
+        <div class="container">
+            <div class="title">My Profile
+                <text style="margin-left: 210px;font-size: 20px;">Id: {{data[0]}}</text>
+            </div>
+            <div class="content">
+              <form action="/pprofileupdate" class="form" method = "POST">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">Name</span>
+                    <input type="text" id="name" name="name" value="{{data[1]}} " placeholder="Your name" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Date Of Birth</span>
+                    <input type="date" id="dob" value="{{data[3]}}"  name="dob"  required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input type="number" id="num" value="{{data[4]}}" name="num"  placeholder="Your Number" required>
+                  </div>
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input type="text" id="email" value="{{data[5]}}" name="email"  placeholder="Enter Email" required>
+                  </div>
+                  <input name="id" value="{{data[0]}}" type="hidden">
+                  <div class="input-box">
+                    <span class="details">Password</span>
+                    <input type="text " id="password" name="password" value="{{data[6]}}"  placeholder="Enter password" required>
+                  </div>
+                  
+                </div>
+                {% with messages = get_flashed_messages() %}  
+                {% if messages %}  
+                      {% for message in messages %}  
+                           <p style="font-size: 20px;background-color:#2aaca691;text-align: center;margin-bottom: 3px;">{{ message }}</p>  
+                      {% endfor %}  
+                {% endif %}  
+             {% endwith %}  
+                <div class="button">
+                  <input type="submit" value="Save Changes">
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+</body>
+</html>

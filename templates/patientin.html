@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Patient Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+       * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins',sans-serif;
+    }
+    
+    
+    a {
+ text-decoration: none;
+}
+
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 8px;
+ background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+ color: #fff;
+}
+
+.nav-links a {
+ color: #fff;
+}
+
+
+.logo a{
+ font-size: 32px;
+ color:white;
+ margin-left: 8px;
+}
+#logout{
+  font-size: 20px;
+  color: white;
+  margin-right: 80px;
+  cursor: pointer;
+}
+    .main{
+      display: flex;
+      flex-wrap: wrap;
+      width:100%;
+      
+    }
+.box1{
+    width: 17%;
+    
+}
+.box2{
+    text-align: center;
+    width:83%;
+    display: grid;
+    
+}
+ul {
+list-style-type: none;
+
+height:557px;
+background-color: #2aaca6bd;
+border:1px solid #1D7874;
+font-size: 18px;
+
+}
+
+li a {
+display: block;
+color:white;
+padding: 10px 16px;
+text-decoration: none;
+
+border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+background-color:#1D7874;
+color: white;
+}
+table{
+    margin-top: -300px;
+}
+td .fa{
+    width:90px;
+      color: white;
+      background-color: #1D7874;
+      padding:20px;
+      border-radius: 5px;
+      font-size: 50px;
+}
+td .fa:hover{
+    background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+    
+}
+td p:hover{
+    text-decoration:underline;
+}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+       
+      </nav>
+      <div class="main">
+        
+      <div class="box1">
+        <ul>
+          <li><a href="/patient/dashboard">Dashboard</a></li>
+          <li><a href="/patient/dashboard/newappointment">Book Appointment</a></li>
+          <li><a href="/patient/dashboard/appointmenthistory">Appointment History</a></li>
+          <li><a href="/patient/dashboard/profile">My Profile</a></li>
+          
+        </ul>
+        </div>
+        <div class="box2">
+             <p style="color:#1D7874;font-size: 40px; width:100%;height:10%;margin-top: 40px;">Welcome, {{fname}} !!</p>
+            
+            <table>
+               
+                <tr>
+                    <td><a href='/patient/dashboard/newappointment'><i class="fa fa-plus" style="font-size:36px;"></i>
+                    <p style="color:#1D7874;font-size: 25px;">New Appointment</p>
+                    <p style="color: black;">Book New Appointments</p>
+                    </a>
+                    </td>
+                    <td><a href="/patient/dashboard/appointmenthistory">
+                        <i class="fa fa-paperclip" style="font-size:36px;"></i>
+                        <p style="color: #1D7874;font-size: 25px;">My Appointments</p>
+                        <p style="color: black;">View Appointment History</p>
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+        </div>
+</body>
+</html>

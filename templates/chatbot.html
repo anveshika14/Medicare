@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Chatbot</title>
+    <style>
+        /* Add your CSS styles here for better design */
+        /* Example: */
+        /* .chat-container { */
+        /*     background-color: #f2f2f2; */
+        /*     padding: 10px; */
+        /*     border-radius: 10px; */
+        /* } */
+    </style>
+</head>
+<body>
+    <h1>Hospital Chatbot</h1>
+    <div class="chat-container" id="chat-container">
+        <!-- Chat messages will be displayed here -->
+    </div>
+    <div class="user-input">
+        <input type="text" id="user-message" placeholder="Type your message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        // Function to send a user message to the server
+        function sendMessage() {
+            const userMessage = document.getElementById("user-message").value;
+            if (userMessage.trim() !== "") {
+                appendMessage("You: " + userMessage);
+                document.getElementById("user-message").value = "";
+
+                // Send the user's message to the server
+                fetch("/chat", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ message: userMessage }),
+                })
+                    .then((response) => response.json())
+                    .then((data) => {
+                        const botResponse = data.message;
+                        appendMessage("Chatbot: " + botResponse);
+                    })
+                    .catch((error) => {
+                        console.error("Error sending message:", error);
+                    });
+            }
+        }
+
+        // Function to append a message to the chat container
+        function appendMessage(message) {
+            const chatContainer = document.getElementById("chat-container");
+            const messageDiv = document.createElement("div");
+            messageDiv.textContent = message;
+            chatContainer.appendChild(messageDiv);
+        }
+    </script>
+</body>
+</html>

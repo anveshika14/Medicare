@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <title> Login Form </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+html,body{
+  display:grid;
+  height: 100vh;
+
+  background:linear-gradient(180deg,#1D7874,white);
+}
+.main_div{
+    margin: 3em auto;
+  width: 365px;
+  background: #fff;
+  padding: 30px;
+  border-radius:5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.main_div .title{
+ position:relative;
+  font-size: 25px;
+  font-weight: 500;
+}
+.main_div .social_icons{
+  
+  display: flex;
+  justify-content:center;
+}
+.icons{
+    display: block;
+color:#fff;
+background-color:#1D7874;
+height:45px;
+border-radius: 50%;
+text-align: center;
+width:17%;
+font-size:20px;
+margin:15px;
+line-height: 45px;
+transition: all 0.3s linear ;
+}
+.icons:hover{
+    background-color:white;
+    color: #1D7874;
+    font-size: 25px;
+}
+/*.social_icons a{
+  display: block;
+  height: 50px;
+  width:17%;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s linear;
+}
+.social_icons a span{
+  margin-left: 5px;
+  font-size: 18px;
+}
+.social_icons a:first-child{
+  margin-right: 5px;
+  background: #4267B2;
+}
+.social_icons a:first-child:hover{
+  background: #375695;
+}
+.social_icons a:last-child{
+  margin-left: 5px;
+  background: #1DA1F2;
+}
+.social_icons a:last-child:hover{
+  background: #0d8bd9;
+}*/
+form {
+  margin-top: 25px;
+}
+form .input_box{
+  height: 50px;
+  width: 100%;
+  position: relative;
+  margin-top: 15px;
+}
+.input_box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 45px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.input_box input:focus{
+  border-color: #1D7874;
+}
+.input_box .icon{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: grey;
+}
+form .option_div{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.option_div .check_box{
+  display: flex;
+  align-items: center;
+}
+.option_div span{
+  margin-left: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.option_div .forget_div a{
+  font-size: 16px;
+  color: #1D7874;
+}
+.button input{
+    padding-left:0;
+    height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+}
+.button input:hover{
+    background: radial-gradient(  #7dc4c0 ,#1D7874 );
+  color:black;
+}
+form .regs{
+  text-align: center;
+  margin-top: 15px;
+}
+.regs a{
+  color: #1D7874;
+}
+form a{
+  text-decoration: none;
+}
+form a:hover{
+  text-decoration: underline;
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+.navbar {
+  display: flex;
+  align-items: center; 
+  justify-content: space-between;
+  padding: 8px;
+  background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+
+.logo a{
+  font-size: 32px;
+  color:white;
+  margin-left: 8px;
+}
+
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color:#0e4d493d;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+
+
+    </style>
+   </head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <ul class="nav-links">
+          <div class="menu">
+            <li><a href="/">Home</a></li>
+            <li><a href="/">About</a></li>
+            
+            <li><a href="/contact">Contact</a></li>
+          </div>
+        </ul>
+      </nav>
+  <div class="main_div">
+    <div class="title">Login As Doctor</div>
+    
+    
+    <form action="/dlogin" class="form" method = "POST"><p style="color:red;font-size: 14px;"> {{msg}}</p>
+      <div class="input_box">
+        <input type="text" id="email" name="email" placeholder="E-mail " required>
+        <div class="icon"><i class="fas fa-user"></i></div>
+      </div>
+      <div class="input_box">
+        <input type="password" id="password" name="password" placeholder="Password" required>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+      <div class="option_div">
+        <div class="check_box">
+          <input type="checkbox">
+          <span>Remember me</span>
+        </div>
+        <div class="forget_div">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      
+      <div class="input_box button">
+        <input type="submit" value="Login">
+      </div><br>
+      <p style="text-align: center; ">Or</p>
+      <div class="social_icons">
+        <a href="#" class="icons"><i id="fb" class="fab fa-facebook-f"></i> </a>
+        <a href="#" class="icons"><i id="in"class="fab fa-google"></i></a>
+        <a href="#" class="icons"><i id="in"class="fab fa-linkedin"></i></a>
+      </div>
+      
+    </form>
+  </div>
+  
+</body>
+</html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Departments</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+   * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins',sans-serif;
+}
+
+
+a {
+ text-decoration: none;
+}
+
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 8px;
+ background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+ color: #fff;
+}
+
+.nav-links a {
+ color: #fff;
+}
+
+
+.logo a{
+ font-size: 32px;
+ color:white;
+ margin-left: 8px;
+}
+#logout{
+  font-size: 20px;
+  color: white;
+  margin-right: 80px;
+}
+.ul {
+list-style-type: none;
+
+padding: 0;
+width:220px;
+height:555px;
+background-color: #2aaca6bd;
+border:1px solid #1D7874;
+font-size: 18px;
+
+}
+
+.ul li a {
+display: block;
+color:white;
+padding: 10px 16px;
+text-decoration: none;
+
+border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+.ul li :hover {
+background-color:#1D7874;
+color: white;
+}
+.box{
+  
+  display:flex;
+  flex-wrap:wrap;
+}
+.box2{
+    width:83%;
+    
+    display:inline;
+}
+/* button{
+    height: 43px;
+    background-color:#2aaca5;
+    color:#fff;
+    font-size: 20px;
+    padding: 7px;
+    width: 25%;
+    margin-bottom: 5px;
+    margin-left: 200px;
+    border-radius: 10px;
+} */
+button:hover{
+    cursor: pointer;
+    background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+}
+table{
+  width: 84%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 150px;
+
+}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+th{
+    background-color: #1D7874;
+    color: white;
+   
+}
+th,td{
+  text-align: center;
+  border:1px solid black;
+  padding: 0px;
+  max-height:20px;
+  max-width: 30px;}
+form{
+    display: inline-block   ;
+    width: 70%;
+    margin-left: 150px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding:10px;
+    margin-top: 10px;
+
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  color:#1D7874;
+  font-size: 30px;
+}
+ .input-box input{
+  height: 40px;
+  width: 60%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+ .input-box input:focus,
+ .input-box input:valid{
+  border-color:#1D7874;
+}
+form  .button{
+   height: 40px;
+   width: 30%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+   
+   margin-left: 60px;
+ }
+ form  .button:hover{
+  
+    background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color:white;
+  }
+
+  /* .pagination-page-info {
+    padding: .6em;
+    padding-left: 0;
+    width: 40em;
+    margin: .5em;
+    margin-left: 0;
+    font-size: 12px;
+}
+.pagination-page-info b {
+    color: black;
+    background: #6aa6ed;
+    padding-left: 2px;
+    padding: .1em .25em;
+    font-size: 150%;
+} */
+  .pagination {
+  display: inline-block;
+  
+  
+  margin-left: 720px;
+  
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 13px;
+  text-decoration: none;
+  border:1px solid black;
+  border-radius: 3px;
+  margin:2px;
+  /* width:160px; */
+}
+
+
+.pagination a:hover:not(.active) {background-color:#1D7874;}
+b{
+  color:black;
+  font-size: 20px;
+}
+.live-search-box{
+  width:25%;
+  margin-left:150px;
+  height:10px;
+  padding: 15px;
+  margin-bottom: 5px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 15px;
+}
+</style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+        </nav>
+        <div class="box">
+        <div class="box1">
+            <ul class="ul">
+              <li><a href="/admin/dashboard">Dashboard</a></li>
+              <li><a href="/admin/dashboard/doctors">Doctors</a></li>
+              <li><a href="/admin/dashboard/patients">Patients</a></li>
+              <li><a href="/admin/dashboard/departments">Departments</a></li>    
+              <li><a href="/admin/dashboard/appointments">Appointments</a></li>
+              <li><a href="/admin/dashboard/messages">Messages</a></li>   
+              <li><a href="/admin/dashboard/adminprofile">My Profile</a></li>        
+            </ul>
+            </div>
+        <div class="box2" >  
+           <form action="/admin/dashboard/departments/adddepartment" class="form" method = "POST">
+            <div class="input-box">
+                <span class="details">Add Department</span>
+                
+                <input type="text" id="dept_name" name="dept_name" placeholder="Enter Department Name" required>
+                <input type="submit" value="Add" class="button">
+              </div>
+              
+            </form>
+            <p style="color:#1D7874;font-size: 40px;margin-left: 390px;">Department List</p>
+           
+            
+          
+              
+                
+            
+            {% with messages = get_flashed_messages() %}  
+            {% if messages %}  
+                  {% for message in messages %}  
+                       <p style="color:red;margin-left: 390px ;font-size: 20px;">{{ message }}</p>  
+                  {% endfor %}  
+            {% endif %}  
+         {% endwith %} 
+         
+         <div style="height:290px;width:85%;overflow-x: auto; display: flex;flex-wrap: wrap;"> 
+          
+          <input type="text" class="live-search-box" placeholder="Enter Keyword" />
+          
+          <!-- <text style="margin-left: 450px;color: black;">Page-{{page}}</text></p>  -->
+          <p style=" color: #1D7874; margin-left: 290px;">Total<b> {{total}} </b>records, Displaying  <b>{{offset+1}}-{{offset+5}} </b></p> 
+         
+        <table class="search">
+            <tr>
+            <th>Id</th> 
+            <th>Departments</th>    
+            <th>Edit</th>
+            <th>Delete</th>
+            </tr>
+            {% for row in data %}
+            <tr class="abc">
+             <td>{{loop.index + offset}}</td>
+             <td style="text-align: left;padding-left: 5px;">{{row[1]}}</td> 
+             <td><a href="{{ url_for('depedit', id=row[0])  }}" style="color:grey;font-size: 25px;"><i class="fa fa-pencil"></i> </a></td>
+             <td><a href="{{ url_for('depdelete', id=row[0])  }}" style="color:red;font-size: 25px;"><i class="fa fa-trash"></i> </a></td>
+             </tr>
+             {% endfor %}
+        </table>
+        
+      </div>
+        
+        <div class="pagination">
+          
+          <a href="{{ url_for('pagination', page=prev_page) }}" style="text-align: left;background-color: #1D7874;">&laquo;</a>
+          <a href="{{ url_for('pagination', page=1) }}">1</a>
+          <a href="{{ url_for('pagination', page=2) }}">2</a>
+          <a href="{{ url_for('pagination', page=3) }}">3</a>
+          <a href="{{ url_for('pagination', page=4) }}">4</a>
+          <a href="{{ url_for('pagination', page=next_page) }}" style="text-align: center;background-color: #1D7874;"> &raquo;</a>
+          
+        </div>
+      
+        </div>
+        
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+    <script type="text/javascript">
+        jQuery(document).ready(function($){
+      
+    $('.search .abc ').each(function(){
+    $(this).attr('data-search-term', $(this).text().toLowerCase());
+    });
+      
+    $('.live-search-box').on('keyup', function(){
+      
+    var searchTerm = $(this).val().toLowerCase();
+      
+        $('.search .abc').each(function(){
+      
+            if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+      
+        });
+      
+    });
+      
+    });
+   </script>
+</body>
+</html>

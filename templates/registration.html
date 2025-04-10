@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title> Registration Form</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  /* height: 100vh; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  /* padding: 10px; */
+  background:linear-gradient(160deg,#1D7874,white);
+}
+.container{
+  margin:2em auto;
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color:#1D7874;
+}
+
+ 
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+ }
+ form .button input:hover{
+  
+  background: radial-gradient(whitesmoke, #1D7874  );
+  color:black;
+  }
+  h3{
+        color:#071E22;
+        font-size:15px;
+        margin-left:200px;
+        font-family:Arial, Helvetica, sans-serif;
+
+    }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+.navbar {
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 8px;
+  background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+}
+
+
+.logo a{
+  font-size: 32px;
+  color:white;
+  margin-left: 8px;
+}
+
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color:#0e4d493d;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+
+
+     </style>
+   </head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+    <ul class="nav-links">
+      <div class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">About</a></li>
+        
+        <li><a href="/contact">Contact</a></li>
+      </div>
+    </ul>
+  </nav>
+  <div class="container">
+    <div class="title">Patient Registration</div>
+    <div class="content">
+      <form action="/reg" class="form" method = "POST">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input type="text" id="fname" name="fname" placeholder="Enter your First name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input type="text" id="lname" name="lname" placeholder="Enter your Last name" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Date Of Birth</span>
+            <input type="date" id="dob" name="dob" placeholder="Enter your Date Of Birth" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="number" id="num" name="num" placeholder="Enter your number" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="text" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+          </div>
+          
+        </div>
+        
+        <div class="button">
+          <input type="submit" value="Register">
+        </div>
+      </form>
+      <p style="text-align: center;">Already Have an Account?<a href ="/login" style="color:#1D7874;text-decoration: none;" >Login Now</a></p>
+    </div>
+  </div>
+
+</body>
+</html>

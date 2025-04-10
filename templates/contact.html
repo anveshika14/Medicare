@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+        *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         font-family: 'Poppins',sans-serif;
+         }
+         body{
+            background-color: #cccccc2c;
+         }
+        .main{
+          display: flex;
+          flex-wrap: wrap;
+         margin-top: 100px;
+         justify-content: center;
+         align-items:center;  
+         background:linear-gradient(160deg,#1D7874,white);
+         height:400px;
+        
+        }
+        .box{
+            
+            height: 400px;
+            transform: scaleY(1.1);
+            margin-left:300px;
+            border-radius: 5px;
+           
+            margin-top: -320px;
+  width: 136%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px 2px #1D7874;
+        }
+        .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 35px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+#msg{
+    
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color:#1D7874;
+}
+
+ 
+ form .button{
+   height: 45px;
+   
+   margin-top:-20px;
+ }
+ form .button input{
+   height: 80%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+ }
+ form .button input:hover{
+  
+  background: radial-gradient(whitesmoke, #1D7874  );
+  color:black;
+  }
+  .navbar {
+  width:100%;
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-between;
+  padding: 8px;
+  background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color: #fff;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+}
+
+
+.logo a{
+  font-size: 32px;
+  color:white;
+  margin-left: 8px;
+  text-decoration: none;
+}
+
+
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li:hover {
+  background-color:#0e4d493d;
+  border-radius: 5px;
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 14px;
+}
+
+
+ul{
+  list-style-type: none;
+}
+
+ 
+ @media(max-width: 584px){
+ .box{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+ 
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
+p{
+  color: #fff;
+  font-size: 50px;
+  margin-left: -400px;
+  margin-top: 100px;
+  
+}
+    </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+    <ul class="nav-links">
+      <div class="menu">
+        <li><a href="/">Home</a></li>
+        <li><a href="/">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        
+      </div>
+    </ul>
+  </nav>
+    <div class="main">
+      <div style="width: 30%;"><p >Send Your Messages</p>
+       <text style="color: white;font-size: 15px;margin-left:-300px"> <i class="fa fa-phone"></i> +91-9876238976,9834090897</text><br>
+    <text style="color: white;font-size: 15px;margin-left:-250px"> <i class="fa fa-envelope"></i> abcd123@gmail.com</text><br>
+    <text style="color: white;font-size: 15px;margin-left:-300px"> <i class="fa fa-home"></i> 234,abc building,near xyz plaza<br><text style="margin-left: -260px;font-size: 15px;">lucknow,Uttar Pradesh</text><br>
+    <text style="font-size: 15px;margin-left:-230px">Pincode:226017</text></text>
+        <div class="box">
+            <div class="title">Get in Touch</div>
+            <div class="content">
+                <form action="/cont" class="form" method = "POST">
+                  <div class="user-details">
+                    <div class="input-box">
+                      <span class="details">First Name</span>
+                      <input type="text" id="fname" name="fname" placeholder="Enter your First name" required>
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Last Name</span>
+                      <input type="text" id="lname" name="lname" placeholder="Enter your Last name" required>
+                    </div>
+                    
+                    <div class="input-box">
+                      <span class="details">Phone Number</span>
+                      <input type="number" id="num" name="num" placeholder="Enter your number" required>
+                    </div>
+                    <div class="input-box">
+                      <span class="details">Email</span>
+                      <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-box">
+                        <span class="details">Message</span>
+                        <textarea id="msg" name="msg" placeholder="Enter your Message" rows="2" cols="57" required></textarea>
+                      </div>
+                    
+                  </div>
+                  
+                  <div class="button">
+                    <input type="submit" value="Submit">
+                  </div>
+                </form>
+                
+              </div>
+        </div>
+       </div>
+   
+</body>
+</html>

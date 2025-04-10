@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+     * {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: 'Poppins',sans-serif;
+ }
+ 
+ 
+ a {
+   text-decoration: none;
+ }
+ 
+ li {
+   list-style: none;
+   
+ }
+ .navbar {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 8px;
+   background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+   color: #fff;
+ }
+ 
+ .nav-links a {
+   color: #fff;
+ }
+ 
+ 
+ .logo a{
+   font-size: 32px;
+   color:white;
+   margin-left: 8px;
+ }
+ #logout{
+    font-size: 20px;
+    color: white;
+    margin-right: 80px;
+  }
+  /* #text{
+    font-size: 40px;
+    color: #1D7874;
+    text-align: center;
+    margin-left: 200px;
+    margin-top: 40px;
+  } */
+  ul {
+  list-style-type: none;
+  
+  padding: 0;
+  width:210px;
+  height:900px;
+  background-color: #2aaca6bd;
+  border:1px solid #1D7874;
+  font-size: 18px;
+  
+}
+
+li a {
+  display: block;
+  color:white;
+  padding: 10px 16px;
+  text-decoration: none;
+ 
+  border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+  background-color:#1D7874;
+  color: white;
+}
+.box{
+    
+    display:flex;
+    flex-wrap:wrap;
+    height: 800px;
+}
+.box1{
+    width: 16%;
+    }
+ .list{
+  width: 83%; 
+  overflow-x: auto;
+  height: 600px;
+} 
+
+table{
+  width:130%;
+  
+  border: 1px solid black;
+  border-collapse: collapse;
+  
+}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+th{
+  background-color: #1D7874;
+  color: #fff;
+}
+
+th,td{
+  text-align: center;
+  border:1px solid black;
+  padding: 4px;
+  padding-left: 4px;  
+}
+td{
+  text-align: left;
+}
+form{
+    display: inline-block   ;
+    width: 70%;
+
+  
+    border-radius: 5px;
+
+
+
+}
+ input{
+  height: 30px;
+  width: 25%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  margin-left: -950px;
+}
+ input:focus,
+ input:valid{
+  border-color:#1D7874;
+}
+button{
+   height: 30px;
+   width: 7%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   padding-bottom: 4px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color:  #1D7874;
+   
+ 
+ }
+ button:hover{
+  
+    background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+  color:white;
+  }
+ /* .res table{
+  background-color: green;
+ } */
+ .pagination {
+  display: inline-block;
+  
+  margin-top: -370px;
+  margin-left: 950px;
+  
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 13px;
+  text-decoration: none;
+  border:1px solid black;
+  border-radius: 3px;
+  margin:2px;
+  /* width:160px; */
+}
+b{
+  color:black;
+  font-size: 20px;
+}
+
+.pagination a:hover:not(.active) {background-color:#1D7874;}
+ </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+      </nav>
+      <div class="box">
+      <div class="box1">
+      <ul>
+        <li><a href="/admin/dashboard">Dashboard</a></li>
+        <li><a href="/admin/dashboard/doctors">Doctor</a></li>
+        <li><a href="/list">Doctor Details</a></li>
+        <li><a href="/dreg">Add Doctor</a></li>
+        
+      </ul>
+      </div>
+      <div class="list" >
+          
+        <table style="overflow-x: auto" id="tab" class="search" >
+          <caption style="color:#1D7874;font-size: 40px;margin-left: -200px;">DOCTOR DETAILS<br>
+            <form >
+              <input type="text"
+                     placeholder=" Enter Keyword"
+                     name="search" id="search" class="live-search-box">
+              <!-- <button type="submit">
+                  <i class="fa fa-search"
+                     style="font-size: 20px;">
+                  </i>
+              </button> -->
+          </form>
+          <p style=" color: #1D7874; margin-left: 0px;font-size: 17px;">Total<b> {{total}} </b>records, Displaying   <b>{{offset+1}}-{{offset+5}} </b></p> 
+        </caption>
+          
+          <!-- <caption style="text-align: left;font-size:20px ;">Total Records</caption> -->
+           <tr >
+            <th>Sr No.</th>
+           <th>First Name</th>
+           <th>Last Name</th>
+           <th>Date of Birth </th>
+           <th>Phone Number</th>
+           <th>Speciality</th>
+           <th>City</th>
+           <th>Consultancy fees</th>
+           <th>Timing<br>From</th>
+           <th>Timing<br>To</th>
+           <th>E-mail</th>
+           <th>Password</th>
+           <th>Edit</th>
+           <th>Delete</th>
+           </tr>
+            {% for row in data %}
+          <tr class="abc">
+           <td>{{loop.index}}</td>
+           <td>{{row[1]}}</td>
+           <td>{{row[2]}}</td>
+           <td>{{row[3]}}</td>
+           <td>{{row[4]}}</td>
+           <td>{{row[5]}}</td>
+           <td>{{row[6]}}</td>
+           <td>{{row[7]}}</td>
+           <td>{{row[8]}}</td>
+           <td>{{row[9]}}</td>
+           <td>{{row[10]}}</td>
+           <td>{{row[11]}}</td>
+           <td><a href="{{ url_for('dredit', id=row[0])  }}" style="color:grey;font-size: 25px;"><i class="fa fa-pencil"></i> </a></td>
+           <td><a href="{{ url_for('delete', id=row[0])  }}" style="color:red;font-size: 25px;"><i class="fa fa-trash"></i> </a></td>
+           </tr>
+           {% endfor %}
+         
+           </table>
+           
+      </div>
+      <div class="pagination">
+          
+        <a href="{{ url_for('list', page=prev_page) }}" style="text-align: left;background-color: #1D7874;color: white;">&laquo; Previous</a>
+        <a href="{{ url_for('list', page=1) }}">1</a>
+        <a href="{{ url_for('list', page=2) }}">2</a>
+        <a href="{{ url_for('list', page=3) }}">3</a>
+        <a href="{{ url_for('list', page=4) }}">4</a>
+        
+        <a href="{{ url_for('list', page=next_page) }}" style="text-align: center;background-color: #1D7874;color: white;">Next &raquo;</a>
+        
+      </div>
+
+      </div>
+      
+      <script type="text/javascript">
+        jQuery(document).ready(function($){
+      
+    $('.search .abc ').each(function(){
+    $(this).attr('data-search-term', $(this).text().toLowerCase());
+    });
+      
+    $('.live-search-box').on('keyup', function(){
+      
+    var searchTerm = $(this).val().toLowerCase();
+      
+        $('.search .abc').each(function(){
+      
+            if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+      
+        });
+      
+    });
+      
+    });
+    </script>
+
+      <!-- <script>
+
+$(document).ready(function(){
+  load_data();
+  function load_data(query)
+  {
+   $.ajax({
+    url:"/searchdoc",
+    method:"POST",
+    data:{query:query},
+    success:function(data)
+    {
+       $('#result').html(data);
+      
+      $("#result").append(data.htmlresponse);
+    }
+   });
+  }
+  $('#search').keyup(function(){
+    var search = $(this).val();
+    if(search != ''){
+    load_data(search);
+   }else{
+    load_data();
+   }
+  });
+}); -->
+     
+<!--      
+  //    let el= document.getElementById('result');
+  //    console.log('e.eer',el)
+  //  if(el.hasChildNodes()){
+  //   console.log('e.',el)
+  //    document.getElementById('tab').style.display='none'
+  //  }
+     -->
+     
+     
+     
+     </script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Patient Dashboard</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+       * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     font-family: 'Poppins',sans-serif;
+    }
+    
+    
+    a {
+ text-decoration: none;
+}
+
+li {
+ list-style: none;
+}
+.navbar {
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 8px;
+ background:radial-gradient( rgb(49, 196, 176) ,#2aaca5 ,#1D7874 );
+ color: #fff;
+}
+
+.nav-links a {
+ color: #fff;
+}
+
+
+.logo a{
+ font-size: 32px;
+ color:white;
+ margin-left: 8px;
+}
+#logout{
+  font-size: 20px;
+  color: white;
+  margin-right: 80px;
+}
+    .main{
+      display: flex;
+      flex-wrap: wrap;
+      width:100%;
+      
+    }
+.box1{
+    width: 17%;
+    
+}
+
+ul {
+list-style-type: none;
+
+height:557px;
+background-color: #2aaca6bd;
+border:1px solid #1D7874;
+font-size: 18px;
+
+}
+
+li a {
+display: block;
+color:white;
+padding: 10px 16px;
+text-decoration: none;
+
+border: 1px solid rgba(128, 128, 128, 0.555);
+}
+
+li :hover {
+background-color:#1D7874;
+color: white;
+}
+.box2{
+  width:80%;
+}
+
+table{
+  width:1300px;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-left: 30px;
+}
+tr:nth-child(odd) {background-color: #f2f2f2;}
+th{
+    background-color: #1D7874;
+    color: white;
+}
+th,td{
+  text-align: center;
+  border:1px solid black;
+  padding: 5px;
+}
+
+ input{
+  height: 30px;
+  width: 20%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+  margin-left: -670px;
+  margin-right: 370px;
+}
+ input:focus,
+ input:valid{
+  border-color:#1D7874;
+}
+.pagination {
+  display: inline-block;
+  
+  margin-top: -60px;
+  margin-left: 950px;
+  
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 4px 13px;
+  text-decoration: none;
+  border:1px solid black;
+  border-radius: 3px;
+  margin:2px;
+  /* width:160px; */
+}
+b{
+  color:black;
+  font-size: 20px;
+}
+
+.pagination a:hover:not(.active) {background-color:#1D7874;}
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo"><a href="/">Medicare <i class="fa fa-hospital-o" style="font-size:36px;"></i></a></div>
+        <a href="/" id="logout"><i class="fa fa-sign-out"></i> Logout</a>
+       
+      </nav>
+      <div class="main">
+      <div class="box1">
+        <ul>
+          <li><a href="/patient/dashboard">Dashboard</a></li>
+          <li><a href="/patient/dashboard/newappointment">Book Appointment</a></li>
+          <li><a href="/patient/dashboard/appointmenthistory">Appointment History</a></li>
+          <li><a href="/patient/dashboard/profile">My Profile</a></li>  
+        </ul>
+        </div>
+        <div class="box2" style="overflow-x: auto;overflow-y: auto;">
+            <table class="search">
+              <caption style="color:#1D7874;font-size: 40px;">Your Appointments
+              <form><input type="text"
+                     placeholder=" Enter Keyword"
+                      class="live-search-box"/></form>
+                    </caption>
+              <tr >
+                <th>Sr no.</th>
+              <th>Patient Name</th>
+              <th>Phone Number</th>
+              <th>E-mail</th>
+              <th>Department</th>
+              <th>Appointment Date</th>
+              <th>Appoitment Time</th>
+              
+              <th>Scheduled Doctor</th>
+              
+              <th>Delete</th>
+              </tr>
+               {% for row in data %}
+             <tr class="abc">
+              <td>{{loop.index}}</td>
+              <td>{{row[1]}}</td>
+              <td>{{row[2]}}</td>
+              <td>{{row[3]}}</td>
+              <td>{{row[4]}}</td>
+              <td>{{row[5]}}</td>
+              <td>{{row[6]}}</td>
+             
+              <td>{{row[7]}}</td>
+              <td><a href="{{ url_for('appdelete', id=row[0])  }}" style="color:red;font-size: 20px;"><i class="fa fa-trash"></i> </a></td>
+              </tr>
+              {% endfor %}
+              </table>
+              </div>
+              <div class="pagination">
+          
+                <a href="{{ url_for('apphistory', page=prev_page) }}" style="text-align: left;background-color: #1D7874;color: white;">&laquo; Previous</a>
+                <a href="{{ url_for('apphistory', page=1) }}">1</a>
+                <a href="{{ url_for('apphistory', page=2) }}">2</a>
+                <a href="{{ url_for('apphistory', page=3) }}">3</a>
+                <a href="{{ url_for('apphistory', page=4) }}">4</a>
+                
+                <a href="{{ url_for('apphistory', page=next_page) }}" style="text-align: center;background-color: #1D7874;color: white;">Next &raquo;</a>
+                
+              </div>
+        
+      </div>
+      <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+  
+      <script type="text/javascript">
+        jQuery(document).ready(function($){
+      
+    $('.search .abc ').each(function(){
+    $(this).attr('data-search-term', $(this).text().toLowerCase());
+    });
+      
+    $('.live-search-box').on('keyup', function(){
+      
+    var searchTerm = $(this).val().toLowerCase();
+      
+        $('.search .abc').each(function(){
+      
+            if ($(this).filter('[data-search-term *= ' + searchTerm + ']').length > 0 || searchTerm.length < 1) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+      
+        });
+      
+    });
+      
+    });
+    </script>
+</body>
+</html>
+    
