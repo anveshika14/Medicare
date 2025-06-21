@@ -7,6 +7,13 @@ There are three modules in the application:-
 - Doctor
 - Admin
 
+## Tech Stack
+- HTML, CSS, Bootstrap
+- Javascipt, Jquery
+- Python Flask
+- MySQL database
+- Postman
+
 ## Features
 - User Authentication
 - User login and Registration
