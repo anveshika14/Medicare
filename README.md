@@ -1,13 +1,19 @@
 # Medicare
 Medicare an Appointment Management System is an efficient web application solution that can help hospitals automate their processes and improve their overall efficiency.The project Hospital Management system includes registration of patients, storing their details into the system.
 
+## Modules
+- User/Patient
+- Doctor
+- Admin
+
 ## Features
 - User Authentication
 - User login and Registration
 - Booking an appointment
 - Managing the appointments
 - Managing the users
-- 
+
+
 <h1>Screenshots of the project:</h1>
 
 ![IMG_20230923_215825_212](https://github.com/user-attachments/assets/f578abf8-a843-43f9-86f8-718bd57902f0)
