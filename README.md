@@ -21,7 +21,6 @@ There are three modules in the application:-
 - Managing the appointments
 - Managing the users
 
-
 <h1>Screenshots of the project:</h1>
 
 ![IMG_20230923_215825_212](https://github.com/user-attachments/assets/f578abf8-a843-43f9-86f8-718bd57902f0)
